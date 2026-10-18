@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>আমাদের রুদ্রপাড়া</title>
+<meta name="description" content="আমাদের রুদ্রপাড়া — ঐক্য • ভ্রাতৃত্ব • উন্নয়ন">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1C3D;--green:#16834A;--gold:#D4AF37;--white:#fff;--ink:#1c2433;--mist:#f3f6f4;--line:#dfe6e1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:58px}
+body{margin:0;font-family:"Hind Siliguri",system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.7;font-size:17px}
+h1,h2{font-family:"Tiro Bangla","Hind Siliguri",serif;font-weight:400;color:var(--navy);line-height:1.35;margin:0}
+a{color:var(--green)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+header{background:var(--navy);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;gap:18px;padding-top:9px;padding-bottom:9px}
+.brand{color:var(--gold);font-weight:700;font-size:1.1rem;text-decoration:none;white-space:nowrap}
+nav{overflow-x:auto;scrollbar-width:none}
+nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0;font-size:.93rem;white-space:nowrap}
+nav a{color:#e8edf5;text-decoration:none}
+nav a:hover{color:var(--gold)}
+.hero{position:relative;background:linear-gradient(#0B1C3D 0%,#173a5c 55%,#e8c766 100%);color:#fff;overflow:hidden;padding:60px 0 150px}
+.hero h1{color:#fff;font-size:clamp(2.2rem,8vw,3.8rem)}
+.hero p{max-width:30ch;margin:12px 0 0;font-size:1.15rem;color:#f3e7b8}
+.sun{position:absolute;right:10%;bottom:80px;width:110px;height:110px;border-radius:50%;background:var(--gold);box-shadow:0 0 70px 20px rgba(212,175,55,.45)}
+.field{position:absolute;left:0;right:0;bottom:0;height:130px}
+.field svg{width:100%;height:100%;display:block}
+.hero .wrap{position:relative;z-index:2}
+.quick{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.quick a,.quick button{font:inherit;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:8px;padding:6px 14px;text-decoration:none;cursor:pointer}
+section{padding:42px 0;border-bottom:1px solid var(--line)}
+section h2{font-size:1.75rem;margin-bottom:12px}
+.alt{background:var(--mist)}
+.list{list-style:none;margin:0;padding:0}
+.list li{padding:13px 0;border-top:1px solid var(--line)}
+.list li:first-child{border-top:0}
+.list b{color:var(--navy)}
+.list small,.muted{color:#5b6677}
+.empty{border:1.5px dashed #aab6ad;padding:14px;border-radius:6px;color:#4d5a52;margin:0}
+.tag{display:inline-block;background:var(--navy);color:var(--gold);padding:0 10px;border-radius:99px;font-size:.82rem;margin-right:6px}
+.red{background:#fde8e8;color:#b42318;font-weight:700;border-radius:6px;padding:0 8px;margin-right:6px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:600;padding:9px 18px;border-radius:8px;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn.navy{background:var(--navy)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.chip{font:inherit;border:1px solid var(--navy);background:#fff;color:var(--navy);border-radius:99px;padding:2px 14px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--navy);color:var(--gold)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+input,select{font:inherit;padding:8px 10px;border:1px solid #b9c4bc;border-radius:8px;background:#fff;min-width:0;flex:1 1 150px}
+.dn{display:flex;gap:12px;align-items:center}.av{flex:none;width:58px;height:58px;border-radius:50%;object-fit:cover;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.3rem}
+.bar{height:12px;background:#dfe6e1;border-radius:99px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.grid button{padding:0;border:0;background:#cfd8d2;border-radius:8px;overflow:hidden;cursor:pointer;aspect-ratio:1}
+.grid img{width:100%;height:100%;object-fit:cover;display:block}
+dialog{border:0;border-radius:10px;padding:10px;max-width:94vw}
+dialog img{max-width:100%;max-height:75vh;display:block}
+dialog::backdrop{background:rgba(11,28,61,.8)}
+footer{background:var(--navy);color:#cfd8e6;padding:30px 0;text-align:center}
+footer strong{color:var(--gold);display:block;font-size:1.1rem}
+footer a{color:var(--gold)}
+.cloud{position:absolute;left:-160px;top:var(--t);width:110px;height:24px;border-radius:99px;background:rgba(255,255,255,.38)}
+.cloud::before,.cloud::after{content:"";position:absolute;border-radius:50%;background:inherit}
+.cloud::before{width:48px;height:48px;left:16px;top:-24px}.cloud::after{width:34px;height:34px;left:56px;top:-14px}
+.birds{position:absolute;top:var(--t);left:-70px;width:44px;fill:none;stroke:#0B1C3D;stroke-width:2.4;stroke-linecap:round}
+.wing{transform-box:fill-box;transform-origin:center bottom}
+.grass{position:absolute;left:0;right:0;bottom:0;height:46px;display:flex;justify-content:space-between;align-items:flex-end;padding:0 2px}
+.grass span{display:block;width:3px;background:#0a4f2b;border-radius:3px 3px 0 0;transform-origin:bottom center}
+.field g{transform-box:fill-box}
+.hero .credit{display:inline-block;max-width:none;margin-top:16px;padding:2px 16px;border:1px solid var(--gold);border-radius:99px;color:var(--gold);font-size:.95rem}
+footer .credit{display:block;margin-top:8px;color:var(--gold)}
+@media (prefers-reduced-motion:no-preference){
+.sun{animation:rise 2s ease-out both,glow 4s ease-in-out 2s infinite alternate}
+.hero h1{animation:title 1.2s .3s cubic-bezier(.2,.7,.2,1) both}
+.hero p{animation:fade 1s 1s both}
+.hero .quick{animation:fade 1s 1.4s both}
+.hero .credit{animation:fade 1s 1.8s both,shine 3.5s 3s ease-in-out infinite}
+.cloud{animation:drift var(--d) linear var(--w) infinite}
+.birds{animation:fly var(--d) linear var(--w) infinite}
+.wing{animation:flap .45s ease-in-out infinite alternate}
+.l1{animation:sway 9s ease-in-out infinite alternate}
+.l2{animation:sway 6s ease-in-out infinite alternate-reverse}
+.l3{animation:sway 4s ease-in-out infinite alternate}
+.grass span{animation:grass var(--s) ease-in-out var(--g) infinite alternate}
+}
+@keyframes rise{from{transform:translateY(70px);opacity:0}to{transform:none;opacity:1}}
+@keyframes glow{from{box-shadow:0 0 60px 14px rgba(212,175,55,.35)}to{box-shadow:0 0 95px 30px rgba(212,175,55,.6)}}
+@keyframes title{from{opacity:0;transform:translateY(28px);letter-spacing:.12em}to{opacity:1;transform:none;letter-spacing:0}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes shine{50%{box-shadow:0 0 14px rgba(212,175,55,.7)}}
+@keyframes drift{to{transform:translateX(calc(100vw + 340px))}}
+@keyframes fly{0%{transform:translate(0,0)}50%{transform:translate(50vw,-14px)}100%{transform:translate(calc(100vw + 140px),6px)}}
+@keyframes flap{from{transform:scaleY(1)}to{transform:scaleY(-.5)}}
+@keyframes sway{from{transform:translateX(-18px)}to{transform:translateX(18px)}}
+@keyframes grass{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#top">আমাদের রুদ্রপাড়া</a>
+  <nav aria-label="প্রধান মেনু"><ul>
+    <li><a href="#about">পরিচিতি</a></li><li><a href="#notices">নোটিশ</a></li><li><a href="#news">খবর</a></li>
+    <li><a href="#events">অনুষ্ঠান</a></li><li><a href="#blood">রক্তদাতা</a></li><li><a href="#emergency">জরুরি</a></li>
+    <li><a href="#business">ব্যবসা</a></li><li><a href="#gallery">গ্যালারি</a></li><li><a href="#projects">উন্নয়ন</a></li>
+    <li><a href="#committee">কমিটি</a></li><li><a href="#contact">যোগাযোগ</a></li>
+  </ul></nav>
+</div></header>
+
+<main id="top">
+<div class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="cloud" style="--t:36px;--d:42s;--w:-6s" aria-hidden="true"></div>
+  <div class="cloud" style="--t:96px;--d:58s;--w:-30s;transform:scale(.7)" aria-hidden="true"></div>
+  <svg class="birds" style="--t:64px;--d:20s;--w:-2s" viewBox="0 0 44 20" aria-hidden="true"><path class="wing" d="M2 14Q12 0 22 12Q32 0 42 14"/></svg>
+  <svg class="birds" style="--t:92px;--d:26s;--w:-11s;width:32px" viewBox="0 0 44 20" aria-hidden="true"><path class="wing" style="animation-delay:-.2s" d="M2 14Q12 0 22 12Q32 0 42 14"/></svg>
+  <div class="field" aria-hidden="true"><svg viewBox="0 0 800 130" preserveAspectRatio="none">
+    <g class="l1"><path d="M-60 50Q200 10 400 45T860 35V130H-60Z" fill="#1d9a58"/></g>
+    <g class="l2"><path d="M-60 80Q220 45 430 78T860 70V130H-60Z" fill="#16834A"/></g>
+    <g class="l3"><path d="M-60 108Q250 82 480 106T860 100V130H-60Z" fill="#0f6b3a"/></g></svg>
+    <div class="grass" id="grass"></div></div>
+  <div class="wrap">
+    <h1>আমাদের রুদ্রপাড়া গ্রাম</h1>
+    <p>ঐক্য • ভ্রাতৃত্ব • উন্নয়ন</p>
+    <p class="credit">✦ ক্রিয়েটিভ বাই রমজান জাইন</p>
+    <div class="quick"><a href="#blood">🩸 রক্তদাতা খুঁজুন</a><a href="tel:999">🚑 জরুরি ৯৯৯</a><button id="share" type="button">↗ শেয়ার করুন</button></div>
+  </div>
+</div>
+
+<section id="about"><div class="wrap"><h2>আমাদের গ্রাম</h2><p id="about-text"></p></div></section>
+<section id="notices" class="alt"><div class="wrap"><h2>গুরুত্বপূর্ণ নোটিশ</h2><div id="notices-box"></div></div></section>
+<section id="news"><div class="wrap"><h2>গ্রামের খবর</h2><div class="chips" id="news-chips" role="group" aria-label="খবরের বিভাগ"></div><div id="news-box"></div></div></section>
+<section id="events" class="alt"><div class="wrap"><h2>আসন্ন অনুষ্ঠান</h2><div id="events-box"></div></div></section>
+
+<section id="blood"><div class="wrap"><h2>রক্তদাতা তালিকা</h2>
+  <p class="muted">শুধু সম্মতি দেওয়া রক্তদাতার তথ্য এখানে থাকে।</p>
+  <div class="filters"><select id="b-group" aria-label="রক্তের গ্রুপ"><option value="">সব গ্রুপ</option></select><input id="b-area" type="search" placeholder="পাড়া/এলাকা" aria-label="এলাকা"></div>
+  <div id="blood-box"></div><div class="btns" id="blood-btns"></div></div></section>
+
+<section id="emergency" class="alt"><div class="wrap"><h2>জরুরি সহায়তা</h2>
+  <p>বিপদে আগে জাতীয় জরুরি সেবায় কল করুন।</p>
+  <div class="btns"><a class="btn" href="tel:999">৯৯৯-এ কল করুন</a></div>
+  <div id="emergency-box"></div><div class="btns" id="help-btns"></div></div></section>
+
+<section id="business"><div class="wrap"><h2>স্থানীয় ব্যবসা ও সেবা</h2>
+  <div class="filters"><input id="s-q" type="search" placeholder="নাম বা সেবা খুঁজুন" aria-label="ব্যবসা খুঁজুন"><select id="s-cat" aria-label="ধরন"><option value="">সব ধরন</option></select></div>
+  <div id="business-box"></div><div class="btns" id="business-btns"></div></div></section>
+
+<section id="gallery" class="alt"><div class="wrap"><h2>ছবির গ্যালারি</h2><div id="gallery-box"></div></div></section>
+<section id="projects"><div class="wrap"><h2>উন্নয়ন প্রকল্প</h2><div id="projects-box"></div></div></section>
+<section id="committee" class="alt"><div class="wrap"><h2>গ্রাম কমিটি</h2><div id="committee-box"></div></div></section>
+<section id="contact"><div class="wrap"><h2>যোগাযোগ</h2><div id="contact-box"></div></div></section>
+</main>
+
+<dialog id="lb"><img alt=""><p id="lb-cap"></p><form method="dialog"><button class="btn navy">বন্ধ করুন</button></form></dialog>
+<footer><div class="wrap"><strong>আমাদের রুদ্রপাড়া</strong>ঐক্য • ভ্রাতৃত্ব • উন্নয়ন<span class="credit">ক্রিয়েটিভ বাই রমজান জাইন</span><br><a href="#top">↑ উপরে যান</a></div></footer>
+
+<script>
+/* ✏️✏️ শুধু এই অংশটি বদলালেই পুরো সাইটের তথ্য বদলে যাবে ✏️✏️
+   কোনো তালিকায় নতুন তথ্য দিতে একটি { ... } লাইন কপি করে বসান।
+   লাইনের শুরুর // মুছলে সেটি চালু হয়। */
+
+const ABOUT = "রুদ্রপাড়া আমাদের সবার গ্রাম। এখানে আমরা একে অপরের পাশে দাঁড়াই, সুখ-দুঃখ ভাগ করে নিই এবং একসাথে গ্রামের উন্নয়নের স্বপ্ন দেখি। এই ওয়েবসাইট গ্রামের সব খবর, নোটিশ ও জরুরি তথ্য এক জায়গায় রাখার একটি উদ্যোগ।";
+
+const CONTACT = { phone: "", email: "", facebook: "", whatsapp: "", address: "" };   // যেমন phone: "01XXXXXXXXX"
+
+/* Google Form-এর লিংক বসালে সংশ্লিষ্ট বোতাম দেখা যাবে (উত্তর আপনার Google Sheet-এ জমা হবে) */
+const FORMS = { donor: "", bloodRequest: "", business: "", help: "" };
+
+const NOTICES = [
+  // { title: "গ্রাম কমিটির সভা", date: "2026-10-25", text: "শুক্রবার বিকাল ৪টায়।", important: true },
+];
+const NEWS = [
+  // বিভাগ: খবর, শিক্ষা, খেলাধুলা, সাফল্য, অনুষ্ঠান, শোকসংবাদ (পরিবারের অনুমতি ছাড়া শোকসংবাদ দেবেন না)
+  // { category: "শিক্ষা", title: "বৃত্তি পরীক্ষায় সাফল্য", date: "2026-10-15", text: "..." },
+];
+const EVENTS = [
+  // { title: "বিজয় দিবসের ক্রীড়া প্রতিযোগিতা", date: "2026-12-16", place: "স্কুলমাঠ", text: "..." },
+];
+const DONORS = [
+  // দাতার নিজের সম্মতি থাকলে তবেই ছবি ও phone দিন। না থাকলে photo: "" ও phone: "" রাখুন।
+  // { name: "রহিম উদ্দিন", group: "O+", area: "পূর্বপাড়া", photo: "rahim.jpg", phone: "01XXXXXXXXX", last: "2026-06-10", note: "যেকোনো সময় রক্ত দিতে পারি" },
+  // last = শেষ রক্তদানের তারিখ (ঐচ্ছিক), note = অতিরিক্ত কথা (ঐচ্ছিক)
+];
+const EMERGENCY = [
+  // { kind: "হাসপাতাল", name: "উপজেলা স্বাস্থ্য কমপ্লেক্স", phone: "01XXXXXXXXX", area: "..." },
+  // { kind: "অ্যাম্বুলেন্স", name: "...", phone: "01XXXXXXXXX", area: "..." },
+];
+const BUSINESS = [
+  // { name: "রহিম স্টোর", category: "মুদি দোকান", text: "বিবরণ", area: "বাজার", phone: "" },
+];
+const GALLERY = [
+  // ছবি GitHub-এর photos ফোল্ডারে আপলোড করুন। ছবিতে চেনা মানুষ থাকলে তাদের অনুমতি নিন।
+  // { src: "photos/ekushey.jpg", caption: "একুশে ফেব্রুয়ারির অনুষ্ঠান" },
+];
+const PROJECTS = [
+  // শুধু যাচাইকৃত সত্যিকারের অঙ্ক দিন (টাকায়, শুধু সংখ্যা)।
+  // { title: "রাস্তা মেরামত", text: "বিবরণ", target: 50000, collected: 20000, spent: 10000 },
+];
+const COMMITTEE = [
+  // { name: "নাম", role: "সভাপতি", phone: "" },
+];
+
+/* ---------- নিচের অংশ বদলানোর দরকার নেই ---------- */
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safe = u => { u = String(u || "").trim(); return /^(https?:\/\/|tel:|mailto:)/i.test(u) || !/^[a-z][a-z0-9+.-]*:/i.test(u) ? u : "#"; };
+const bn = n => Number(n).toLocaleString("bn-BD");
+const fmt = d => { const x = new Date(d + "T00:00:00"); return isNaN(x) ? esc(d) : x.toLocaleDateString("bn-BD", { day: "numeric", month: "long", year: "numeric" }); };
+const empty = m => `<p class="empty">${m}</p>`;
+const tel = p => p ? `<a href="tel:${esc(p)}">${esc(p)}</a>` : "";
+const ul = rows => `<ul class="list">${rows.join("")}</ul>`;
+const btn = (label, url, cls = "") => url ? `<a class="btn ${cls}" href="${esc(safe(url))}" target="_blank" rel="noopener">${label}</a>` : "";
+
+$("about-text").textContent = ABOUT;
+
+// নোটিশ
+$("notices-box").innerHTML = NOTICES.length ? ul(NOTICES.map(n =>
+  `<li><b>${n.important ? "⚠️ " : ""}${esc(n.title)}</b> <small>${fmt(n.date)}</small><div>${esc(n.text)}</div></li>`)) : empty("এখনো কোনো নোটিশ প্রকাশ করা হয়নি।");
+
+// খবর + ফিল্টার
+const cats = ["সব", ...new Set(NEWS.map(n => n.category))];
+let newsCat = "সব";
+function drawNews() {
+  const items = NEWS.filter(n => newsCat === "সব" || n.category === newsCat).sort((a, b) => b.date.localeCompare(a.date));
+  $("news-box").innerHTML = items.length ? ul(items.map(n =>
+    `<li><span class="tag">${esc(n.category)}</span><b>${esc(n.title)}</b><br><small>${fmt(n.date)}</small><div>${esc(n.text)}</div></li>`)) : empty("এখনো কোনো খবর প্রকাশ করা হয়নি।");
+  $("news-chips").innerHTML = NEWS.length ? cats.map(c => `<button type="button" class="chip" aria-pressed="${c === newsCat}" data-c="${esc(c)}">${esc(c)}</button>`).join("") : "";
+}
+$("news-chips").addEventListener("click", e => { const c = e.target.dataset.c; if (c) { newsCat = c; drawNews(); } });
+drawNews();
+
+// অনুষ্ঠান (শুধু আগামী)
+const today = new Date().toISOString().slice(0, 10);
+const up = EVENTS.filter(e => e.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+$("events-box").innerHTML = up.length ? ul(up.map(e =>
+  `<li><b>${esc(e.title)}</b><br><small>${fmt(e.date)}${e.place ? " · " + esc(e.place) : ""}</small><div>${esc(e.text)}</div></li>`)) : empty("এখন কোনো আসন্ন অনুষ্ঠান নেই।");
+
+// রক্তদাতা
+["A+","A-","B+","B-","AB+","AB-","O+","O-"].forEach(g => $("b-group").add(new Option(g, g)));
+function drawBlood() {
+  const g = $("b-group").value, a = $("b-area").value.trim().toLowerCase();
+  const items = DONORS.filter(d => (!g || d.group === g) && (!a || (d.area || "").toLowerCase().includes(a)));
+  $("blood-box").innerHTML = items.length ? ul(items.map(d => {
+    const av = d.photo ? `<img class="av" loading="lazy" src="${esc(safe(d.photo))}" alt="${esc(d.name)}">` : `<span class="av" aria-hidden="true">${esc((d.name || "?").trim().charAt(0))}</span>`;
+    return `<li class="dn">${av}<div><span class="red">${esc(d.group)}</span><b>${esc(d.name)}</b> <small>${esc(d.area)}</small>` +
+      (d.last ? `<div><small>শেষ রক্তদান: ${fmt(d.last)}</small></div>` : "") + (d.note ? `<div>${esc(d.note)}</div>` : "") +
+      `<div>${d.phone ? tel(d.phone) : '<small>ফোন গোপন — কমিটির মাধ্যমে যোগাযোগ করুন</small>'}</div></div></li>`; })) : empty(DONORS.length ? "এই শর্তে কোনো রক্তদাতা পাওয়া যায়নি।" : "এখনো কোনো রক্তদাতার তথ্য যোগ করা হয়নি।");
+}
+$("b-group").onchange = $("b-area").oninput = drawBlood; drawBlood();
+$("blood-btns").innerHTML = btn("রক্তদাতা হিসেবে নিবন্ধন", FORMS.donor) + btn("রক্তের অনুরোধ জানান", FORMS.bloodRequest, "navy");
+
+// জরুরি
+$("emergency-box").innerHTML = EMERGENCY.length ? ul(EMERGENCY.map(e =>
+  `<li><span class="tag">${esc(e.kind)}</span><b>${esc(e.name)}</b> <small>${esc(e.area)}</small><div>${tel(e.phone)}</div></li>`)) : "";
+$("help-btns").innerHTML = btn("সহায়তার অনুরোধ (যাচাইয়ের পর প্রকাশ)", FORMS.help, "navy");
+
+// ব্যবসা
+[...new Set(BUSINESS.map(b => b.category))].forEach(c => $("s-cat").add(new Option(c, c)));
+function drawBiz() {
+  const q = $("s-q").value.trim().toLowerCase(), c = $("s-cat").value;
+  const items = BUSINESS.filter(b => (!c || b.category === c) && (!q || (b.name + " " + (b.text || "")).toLowerCase().includes(q)));
+  $("business-box").innerHTML = items.length ? ul(items.map(b =>
+    `<li><span class="tag">${esc(b.category)}</span><b>${esc(b.name)}</b> <small>${esc(b.area)}</small><div>${esc(b.text)}</div><div>${tel(b.phone)}</div></li>`)) : empty(BUSINESS.length ? "কিছু পাওয়া যায়নি।" : "এখনো কোনো ব্যবসার তথ্য যোগ করা হয়নি।");
+}
+$("s-q").oninput = $("s-cat").onchange = drawBiz; drawBiz();
+$("business-btns").innerHTML = btn("আপনার ব্যবসা যুক্ত করুন", FORMS.business);
+
+// গ্যালারি
+$("gallery-box").innerHTML = GALLERY.length ? `<div class="grid">${GALLERY.map((g, i) =>
+  `<button type="button" data-i="${i}" aria-label="${esc(g.caption)}"><img loading="lazy" src="${esc(safe(g.src))}" alt="${esc(g.caption)}"></button>`).join("")}</div>` : empty("এখনো কোনো ছবি যোগ করা হয়নি।");
+$("gallery-box").addEventListener("click", e => {
+  const b = e.target.closest("button[data-i]"); if (!b) return;
+  const g = GALLERY[b.dataset.i]; $("lb").querySelector("img").src = safe(g.src); $("lb-cap").textContent = g.caption; $("lb").showModal();
+});
+
+// প্রকল্প
+$("projects-box").innerHTML = PROJECTS.length ? PROJECTS.map(p => {
+  const pct = p.target > 0 ? Math.min(100, Math.round(p.collected / p.target * 100)) : 0;
+  return `<article style="margin-bottom:22px"><b>${esc(p.title)}</b><div>${esc(p.text)}</div>
+  <div class="bar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>
+  <small>${bn(pct)}% · লক্ষ্য ৳${bn(p.target)} · সংগৃহীত ৳${bn(p.collected)} · ব্যয় ৳${bn(p.spent)} · হাতে আছে ৳${bn(p.collected - p.spent)} · লক্ষ্য পূরণে বাকি ৳${bn(Math.max(0, p.target - p.collected))}</small></article>`;
+}).join("") : empty("উন্নয়ন প্রকল্পের তথ্য শীঘ্রই যোগ করা হবে। যাচাইকৃত হিসাব ছাড়া কোনো অঙ্ক দেখানো হবে না।");
+
+// কমিটি
+$("committee-box").innerHTML = COMMITTEE.length ? ul(COMMITTEE.map(c =>
+  `<li><b>${esc(c.name)}</b> <small>${esc(c.role)}</small><div>${tel(c.phone)}</div></li>`)) : empty("কমিটির তথ্য শীঘ্রই যোগ করা হবে।");
+
+// যোগাযোগ
+const wa = CONTACT.whatsapp ? "https://wa.me/" + CONTACT.whatsapp.replace(/\D/g, "") : "";
+const cr = [CONTACT.phone && `ফোন: ${tel(CONTACT.phone)}`, CONTACT.email && `ইমেইল: <a href="mailto:${esc(CONTACT.email)}">${esc(CONTACT.email)}</a>`, CONTACT.address && `ঠিকানা: ${esc(CONTACT.address)}`];
+$("contact-box").innerHTML = cr.some(Boolean) || CONTACT.facebook || wa
+  ? `<p>${cr.filter(Boolean).join("<br>")}</p><div class="btns">${btn("ফেসবুক পেজ", CONTACT.facebook, "navy")}${btn("হোয়াটসঅ্যাপ", wa)}</div>` : empty("যোগাযোগের তথ্য শীঘ্রই যোগ করা হবে।");
+
+// ঘাসের পাতা (সাজসজ্জা)
+(() => { const g = $("grass"); for (let i = 0; i < 70; i++) { const b = document.createElement("span");
+  b.style.cssText = `height:${12 + Math.random() * 26}px;--s:${(2 + Math.random() * 2).toFixed(1)}s;--g:-${(Math.random() * 3).toFixed(1)}s`; g.appendChild(b); } })();
+
+// শেয়ার
+$("share").onclick = async () => {
+  const d = { title: "আমাদের রুদ্রপাড়া", url: location.href };
+  try { navigator.share ? await navigator.share(d) : (await navigator.clipboard.writeText(d.url), alert("লিংক কপি হয়েছে")); } catch (_) {}
+};
+</script>
+</body>
+</html>

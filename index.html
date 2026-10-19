@@ -4,11 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>আমাদের শ্রীনগর | ঐক্য • মানবতা • উন্নয়ন</title>
-  
-  <!-- বাংলা ফন্ট -->
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Supabase JS Library -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <style>
@@ -27,25 +23,29 @@
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    
+    /* লেখা কাটা বন্ধ করার জন্য overflow-x: hidden; যোগ করা হয়েছে */
+    body { 
+      background-color: var(--bg); 
+      color: var(--text); 
+      line-height: 1.6; 
+      overflow-x: hidden; 
+    }
+    
     a { text-decoration: none; color: inherit; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
-    /* Header */
     header { background: var(--card-bg); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
     .header-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; }
     .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 8px; }
     
-    /* Hero Section */
     .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, var(--primary-light) 0%, var(--bg) 100%); }
     .hero h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
     .hero p.tagline { font-size: 1.2rem; color: var(--text-muted); font-weight: 500; letter-spacing: 1px; margin-bottom: 20px; }
     
-    /* Sections */
     .section { padding: 50px 0; }
     .section-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 5px; }
     
-    /* Grid & Cards */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
     .card { background: var(--card-bg); padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #e2e8f0; transition: transform 0.3s; }
     .card:hover { transform: translateY(-5px); }
@@ -56,11 +56,9 @@
     .badge.danger { background: #fee2e2; color: var(--danger); }
     .badge.success { background: #d1fae5; color: var(--success); }
     
-    /* Loading & Empty State */
     .loading { text-align: center; padding: 30px; color: var(--text-muted); font-weight: 500; }
     .empty { text-align: center; padding: 30px; color: var(--text-muted); background: var(--card-bg); border-radius: var(--radius); border: 1px dashed #cbd5e1; grid-column: 1 / -1; }
 
-    /* Footer */
     footer { background: var(--primary); color: white; text-align: center; padding: 30px 20px; margin-top: 40px; }
     .footer-credit { background: rgba(255,255,255,0.1); display: inline-block; padding: 15px 30px; border-radius: 10px; margin-bottom: 20px; }
     
@@ -72,14 +70,12 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="container header-inner">
       <div class="logo">🌿 আমাদের শ্রীনগর</div>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <h1>আমাদের শ্রীনগর</h1>
@@ -87,7 +83,6 @@
     </div>
   </section>
 
-  <!-- NEWS SECTION -->
   <section class="section container" id="news">
     <h2 class="section-title">সর্বশেষ সংবাদ ও ঘোষণা</h2>
     <div class="grid" id="newsGrid">
@@ -95,7 +90,6 @@
     </div>
   </section>
 
-  <!-- DONORS SECTION -->
   <section class="section container" id="donors" style="background: white; border-radius: var(--radius);">
     <h2 class="section-title">রক্তদাতা ডিরেক্টরি</h2>
     <div class="grid" id="donorGrid">
@@ -103,7 +97,6 @@
     </div>
   </section>
 
-  <!-- FUND SECTION -->
   <section class="section container" id="fund">
     <h2 class="section-title">মানবিক তহবিল (যাচাইকৃত)</h2>
     <div class="grid" id="fundGrid">
@@ -111,7 +104,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-credit">
@@ -123,16 +115,12 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
   <script>
-    // আপনার সঠিক URL এবং Key এখানে বসানো হয়েছে
     const SUPABASE_URL = 'https://jawfpisrdnxywencnsko.supabase.co';
     const SUPABASE_ANON_KEY = 'sb_publishable_XcIfonLmRkpV-iFhjWOdUQ_dlCe2yl1';
     
-    // Supabase ইনিশিয়ালাইজ
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // ১. সংবাদ লোড করা (শুধু is_published = true গুলো)
     async function loadNews() {
       const grid = document.getElementById('newsGrid');
       try {
@@ -145,7 +133,7 @@
         if (error) throw error;
 
         if (!data || data.length === 0) {
-          grid.innerHTML = '<div class="empty">কোনো সংবাদ পাওয়া যায়নি।</div>';
+          grid.innerHTML = '<div class="empty">কোনো সংবাদ পাওয়া যায়নি। (ডেটাবেসে ডেটা যোগ করুন)</div>';
           return;
         }
 
@@ -162,7 +150,6 @@
       }
     }
 
-    // ২. রক্তদাতা লোড করা (শুধু status = approved গুলো)
     async function loadDonors() {
       const grid = document.getElementById('donorGrid');
       try {
@@ -191,7 +178,6 @@
       }
     }
 
-    // ৩. তহবিল লোড করা (শুধু is_verified = true গুলো)
     async function loadFund() {
       const grid = document.getElementById('fundGrid');
       try {
@@ -229,7 +215,6 @@
       }
     }
 
-    // পেজ লোড হলে সব ফাংশন কল হবে
     document.addEventListener('DOMContentLoaded', () => {
       loadNews();
       loadDonors();
